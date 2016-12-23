@@ -1,0 +1,9 @@
+alex_user:
+    resource: "@AlexUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+alex_anunt:
+    resource: "@AlexAnuntBundle/Controller/"
+    type:     annotation
+    prefix:   /

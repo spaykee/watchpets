@@ -1,0 +1,18 @@
+#signup {
+  color: #000;
+}
+
+#dropdownli {
+  color: #fff;
+
+}
+
+#dropdownli:hover, #dropdownlogout:hover {
+  color: #000;
+
+}
+
+#dropdownlogout {
+  color: #BF0000;
+  font-weight: bold;
+}

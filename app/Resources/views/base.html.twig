@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Watchpets{% endblock %}</title>
+        {% block stylesheets %}
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+          <link rel="stylesheet" href="{{ asset('bundles/bootstrap/css/bootstrap.css') }}">
+          <link rel="stylesheet" href="{{ asset('bundles/bootstrap/css/bootstrap-theme.css') }}">
+          <link rel="stylesheet" href="{{ asset('bundles/css/style.css') }}">
+          <script rel="javascript" src="{{ asset('bundles/bootstrap/js/bootstrap.js') }}"></script>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

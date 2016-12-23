@@ -1,0 +1,51 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+{{ parent() }}
+
+    <h1>Anunt</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ anunt.id }}</td>
+            </tr>
+            <tr>
+                <th>Judet</th>
+                <td>{{ anunt.judet }}</td>
+            </tr>
+            <tr>
+                <th>Oras</th>
+                <td>{{ anunt.oras }}</td>
+            </tr>
+            <tr>
+                <th>Pret</th>
+                <td>{{ anunt.pret }}</td>
+            </tr>
+            <tr>
+                <th>Detalii</th>
+                <td>{{ anunt.detalii }}</td>
+            </tr>
+            <tr>
+                <th>Data</th>
+                <td>{% if anunt.data %}{{ anunt.data|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('_edit', { 'id': anunt.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+  </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+{{ parent() }}
+
+  <h1>Lista Anunturi</h1>
+  <a class="btn btn-success" href="{{ path('_new') }}">Creaza anunt</a>
+
+  <table class="table">
+      <thead>
+          <tr>
+              <th>Judet</th>
+              <th>Oras</th>
+              <th>Pret</th>
+              <th>Detalii</th>
+              <th>Data</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+      {% for anunt in anunts %}
+          <tr>
+              <td>{{ anunt.judet }}</td>
+              <td>{{ anunt.oras }}</td>
+              <td>{{ anunt.pret }} Lei</td>
+              <td>{{ anunt.detalii }}</td>
+              <td>{% if anunt.data %}{{ anunt.data|date('Y-m-d H:i:s') }}{% endif %}</td>
+              <td>
+                  <a class="btn btn-warning" href="{{ path('_show', { 'id': anunt.id }) }}">show</a>
+                  <a class="btn btn-primary" href="{{ path('_edit', { 'id': anunt.id }) }}">edit</a>
+              </td>
+          </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+
+</div>
+    {% endblock %}
